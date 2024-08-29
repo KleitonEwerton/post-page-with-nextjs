@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.19.0",
+    "blog-nextjs-crud": "file:",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18",

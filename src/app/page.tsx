@@ -17,7 +17,6 @@ export default async function Home() {
         <Link href="/posts/create" className="bg-white px-4 py-2 rounded">
           Create Post
         </Link>{" "}
-        // Link to create a new post.
       </div>
       <div className="mb-32 grid gap-x-8 gap-y-4 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         {posts.map((post) => {

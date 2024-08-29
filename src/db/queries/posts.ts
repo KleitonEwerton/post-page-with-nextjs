@@ -1,8 +1,8 @@
-import type { Post } from '@prisma/client' // Importing the Post type from the Prisma client library.
+import type { Post } from '@prisma/client'
 import { db } from '@/db'
-import { notFound } from 'next/navigation' // Importing the notFound function from Next.js for handling 404 errors.
+import { notFound } from 'next/navigation'
 
-export async function fetchPosts(): Promise<Post[]> {  // Function to fetch all posts from the database.
+export async function fetchPosts(): Promise<Post[]> {
     return await db.post.findMany({
         orderBy: [
             {
@@ -12,7 +12,7 @@ export async function fetchPosts(): Promise<Post[]> {  // Function to fetch all 
     })
 }
 
-export async function fetchPostById(id: string): Promise<Post | null> { // Function to fetch a single post by its ID.
+export async function fetchPostById(id: string): Promise<Post | null> {
     const post = await db.post.findFirst({
         where: {
             id
@@ -20,7 +20,7 @@ export async function fetchPostById(id: string): Promise<Post | null> { // Funct
     })
 
     if (!post) {
-        notFound() // If the post is not found, a 404 error is thrown.
+        notFound()
     }
 
     return post
